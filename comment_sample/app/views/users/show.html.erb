@@ -1,0 +1,9 @@
+<h1>ユーザー詳細ページ</h1>
+<h3><%= @user.email %></h3>    <%# インスタンス変数userにメールを紐付けたものを表示　%>
+<h2>投稿内容</h2>
+<% @user.posts.each do |post| %>  <%# インスタンス変数userに投稿のIDを紐づけたものを表示　%>
+  <a href="/posts/<%= post.id %>"><%= post.content %></a> <%# post.idがURL、post.contentが実際の内容。　%>
+  <hr>
+<% end %>
+<%= link_to "ユーザー一覧へ", users_path %>
+<%= link_to "ホームへ戻る", posts_path %>
